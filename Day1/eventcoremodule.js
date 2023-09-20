@@ -8,10 +8,18 @@ const EventEmitter=require('node:events');
 
 const emitter=new EventEmitter();
 
-emitter.on("order-pizza",()=>{
-    console.log("Order received, baking the pizza");
+emitter.on("order-pizza",(size,topping)=>{
+    console.log(`Order received for ${size} ${topping} pizza`);
 });
+
+emitter.on("order-pizza",(size)=>{
+    if(size==="large")
+    console.log("Serving Complementary Drink!")
+})
 
 console.log("Person Arrives at Pizza Store!");
 
-emitter.emit("order-pizza");
+emitter.emit("order-pizza","large","mushroom");
+
+console.log("Another Person Arrives at Pizza Store");
+emitter.emit("order-pizza","medium","Corn");
