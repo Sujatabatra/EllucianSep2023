@@ -1,0 +1,12 @@
+console.log("hello");
+var x=10;
+console.log(typeof x);
+x="Sujata"
+console.log(typeof x);
+x=true
+console.log(typeof x);
+x={}
+console.log(typeof x);
+x=[78,90,99];
+console.log(typeof x);
+console.log(x.length);
